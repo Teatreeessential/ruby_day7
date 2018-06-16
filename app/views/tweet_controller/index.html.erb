@@ -1,0 +1,25 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">닉네임</th>
+      <th scope="col">제목</th>
+      <th scope="col">아이피</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @list.each_with_index.reverse_each do |row,index| %>
+    <tr>
+        
+      <th><%=index+1%></th>
+      <th scope="row"><%=row.name%></th>
+      <td><a href="/show/<%=row.id%>"><%=row.title%></a></td>
+      <td><%=row.ip_address%></td>
+    </tr>
+    <%end%>
+      
+  </tbody>
+</table>
+
+
+<a class="btn btn-dark" href="/new">새 글 쓰기</a>
